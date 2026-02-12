@@ -1,0 +1,342 @@
+:root {
+    --brand: #392b5c;
+    --brand-2: #6b46e0;
+    --gold: #caa76a;
+    --ink: #1a1d29;
+    --cardBorder: rgba(255, 255, 255, .22);
+}
+
+body {
+    font-family: 'Kanit', 'Poppins', system-ui, Segoe UI, Roboto, Arial;
+    color: var(--ink);
+    background: #fff;
+    padding-top: 110px;
+}
+
+.navbar .nav-link.active-page,
+.navbar .dropdown-item.active-page {
+    color: var(--gold) !important;
+    font-weight: 700;
+}
+
+/* ================= HERO ================= */
+.hero-wrap {
+    width: 90% !important;
+    padding: 0 !important;
+    margin-top: 10px !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom center;
+    z-index: -1;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.28) 100%);
+    z-index: 1;
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+    color: #fff;
+}
+
+.white-spacer {
+    background: #fff;
+    padding: 28px 0;
+}
+
+.section-dark {
+    background: var(--brand);
+    color: #fff;
+}
+
+.section-pad {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-weight: 500;
+}
+
+.lead-muted {
+    color: #ecebf4;
+    font-size: .9rem;
+}
+
+.section-title.mb-3 {
+    text-align: center;
+    width: 100%;
+    margin-top: -50px !important;
+}
+
+/* ================= LOGO CAROUSEL ================= */
+.ref-logos-wrap {
+    background: #fff;
+    padding: 30px 0 60px;
+}
+
+#clientsCarousel .carousel-inner {
+    padding: 8px 0;
+}
+
+#clientsCarousel .carousel-item .d-flex {
+    gap: 60px !important;
+    row-gap: 40px !important;
+}
+
+.logo-box {
+    padding: 10px;
+}
+
+.logo-frame {
+    width: 140px;
+    height: 100px;
+    object-fit: contain;
+    background: transparent;
+    border: none;
+    transition: transform .25s ease, filter .25s ease;
+}
+
+.logo-frame:hover {
+    transform: translateY(-6px) scale(1.06);
+    filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.25));
+}
+
+/* ================= MAP SECTION STYLES ================= */
+.ref-map-section .section-title {
+    font-family: 'Kanit', 'Poppins', sans-serif;
+    font-weight: 700 !important;
+    color: var(--brand);
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.map-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    margin-top: 26px;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.map-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: none;
+    mix-blend-mode: multiply;
+}
+
+/* ================= PROJECT CARDS ================= */
+.ref-projects-section .section-title {
+    font-family: 'Kanit', 'Poppins', sans-serif;
+    font-weight: 700 !important;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.ref-projects-section {
+    background: var(--brand);
+    color: #fff;
+    text-align: center;
+    margin-top: 0;
+    padding: 80px 0 56px;
+    position: relative;
+    z-index: 10;
+}
+
+.ref-card-grid .col-md-3,
+.ref-card-grid .col-md {
+    margin-bottom: 18px;
+}
+
+.ref-card-grid .col-md-3,
+.ref-card-grid .col-md,
+.ref-card-grid .col-sm-6 {
+    display: flex;
+}
+
+.ref-card {
+    background: #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, .35);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1 1 auto;
+}
+
+.ref-card>img:first-child {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.ref-card-logo {
+    background: #ffffff;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, .06);
+    height: 70px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.ref-card-logo img {
+    max-height: 50px !important;
+    max-width: 80% !important;
+    object-fit: contain !important;
+    display: block;
+    margin: 0 auto;
+}
+
+.ref-card-footer {
+    background: #b7965a;
+    color: #fff;
+    padding: 10px 14px;
+    font-size: .7rem;
+    text-align: left;
+    flex-grow: 1;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.ref-card-footer ul {
+    padding-left: 16px;
+    margin: 0;
+    list-style: disc;
+}
+
+.fw-head {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.75rem;
+}
+
+.ref-projects-secondary {
+    padding-top: 40px;
+    padding-bottom: 70px;
+}
+
+.ref-section-heading {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 1.2rem;
+    letter-spacing: .06em;
+}
+
+.ref-section-heading::before,
+.ref-section-heading::after {
+    content: '•';
+    color: var(--gold);
+    margin: 0 14px;
+}
+
+.ref-section-heading-wrap {
+    margin-top: -10px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+#projects .section-title {
+    margin-top: 0;
+}
+
+#projects .lead-muted {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    font-size: 1rem !important;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+#projects {
+    padding-bottom: 20px !important;
+}
+
+/* Buttons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000 !important;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-size: 60%;
+}
+
+#clientsCarousel .carousel-control-prev {
+    left: -80px;
+    width: 60px;
+    opacity: 1;
+}
+
+#clientsCarousel .carousel-control-next {
+    right: -80px;
+    width: 60px;
+    opacity: 1;
+}
+
+#hotelCarousel .carousel-control-prev {
+    left: -90px;
+    width: 60px;
+    opacity: 1;
+}
+
+#hotelCarousel .carousel-control-next {
+    right: -90px;
+    width: 60px;
+    opacity: 1;
+}
+
+@media (max-width: 991px) {
+
+    #clientsCarousel .carousel-control-prev,
+    #hotelCarousel .carousel-control-prev {
+        left: 0;
+    }
+
+    #clientsCarousel .carousel-control-next,
+    #hotelCarousel .carousel-control-next {
+        right: 0;
+    }
+
+    .map-wrap {
+        overflow-x: auto;
+        min-height: auto;
+    }
+}

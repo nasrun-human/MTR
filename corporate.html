@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Corporate Affairs Services | MTR Asset Manager Co., Ltd.</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="navbar-styles.css" rel="stylesheet" />
+  <link href="footer-contact.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --brand: #2e2244;
+      --brand-2: #6b46e0;
+      --gold: #caa76a;
+      --ink: #1a1d29;
+      --cardBorder: rgba(255, 255, 255, .22);
+
+      /* สีพื้นหลังแคปซูลแบบ HRM Style */
+      --pill-bg: #efece9;
+    }
+
+    body {
+      font-family: 'Poppins', 'Kanit', sans-serif;
+      color: var(--ink);
+      background: #fff;
+      padding-top: 110px;
+    }
+
+    .navbar .nav-link,
+    .navbar .dropdown-item {
+      font-family: 'Poppins', sans-serif !important;
+    }
+
+    /* CSS: เมนูหน้าปัจจุบันให้เป็นสีทอง */
+    .navbar .nav-link.active-page,
+    .navbar .dropdown-item.active-page {
+      color: var(--gold) !important;
+      font-weight: 700;
+    }
+
+    /* ========= HERO ========= */
+    .hero-wrap {
+      margin-top: 10px;
+      width: 90% !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .hero {
+      background: url('image/111.png') center/cover no-repeat;
+      min-height: 450px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, .16);
+      position: relative;
+      width: 100% !important;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, .05) 0%, rgba(0, 0, 0, .45) 100%);
+    }
+
+    .hero-title {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      padding: 24px;
+      pointer-events: none;
+    }
+
+    .hero-title h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: clamp(32px, 5.4vw, 54px);
+      letter-spacing: .5px;
+      margin: 0;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, .45);
+    }
+
+    .white-spacer {
+      background: #fff;
+      padding: 28px 0;
+    }
+
+    .section-dark {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .section-pad {
+      padding: 56px 0;
+    }
+
+    .section-title {
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* ========= OUR SERVICES GRID ========= */
+    .cs-services-wrap {
+      padding-top: 40px;
+      padding-bottom: 50px;
+    }
+
+    .cs-card {
+      border: 2px solid rgba(255, 255, 255, .45);
+      padding: 8px;
+      border-radius: 8px;
+      background: transparent;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cs-card-inner {
+      background: #2f2547;
+      border-radius: 4px;
+      padding: 10px 10px 16px;
+      text-align: center;
+    }
+
+    .cs-thumb {
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .cs-thumb img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transform: scale(1);
+      transition: transform .45s ease, filter .35s ease;
+    }
+
+    .cs-thumb:hover img {
+      transform: scale(1.08);
+      filter: brightness(1.12) contrast(1.15);
+    }
+
+    .cs-thumb-link {
+      display: block;
+      text-decoration: none;
+    }
+
+    .cs-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: .9rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    /* ⭐ ปรับปุ่ม Learn more ให้ตัวหนังสือสีขาว */
+    .cs-btn {
+      background: var(--gold);
+      color: #ffffff !important;
+      /* เปลี่ยนเป็นสีขาว */
+      border: none;
+      border-radius: 999px;
+      font-size: .75rem;
+      padding: .35rem 1rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 400;
+      font-family: 'Poppins', sans-serif;
+      display: inline-block;
+      text-decoration: none;
+      margin-top: 4px;
+    }
+
+    .cs-btn:hover {
+      filter: brightness(.95);
+      color: #ffffff !important;
+    }
+
+    /* ========= PILL SECTION (HRM STYLE) ========= */
+    .pm-section {
+      padding: 56px 0 42px;
+    }
+
+    .pm-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      margin-bottom: 35px;
+
+    }
+
+    .pm-grid .col-md-4 {
+      margin-bottom: 24px;
+    }
+
+    .pm-item {
+      position: relative;
+      background: var(--pill-bg);
+      border-radius: 16px;
+
+      /* Padding ซ้ายขวาเท่ากัน (85px) เพื่อให้ Flexbox หาจุดกึ่งกลางกล่องได้ถูกต้อง */
+      padding: 10px 85px 10px 85px;
+
+      min-height: 90px;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      box-shadow: none;
+      transition: transform .3s ease;
+      cursor: default;
+    }
+
+    .pm-item:hover {
+      transform: translateY(-3px);
+    }
+
+    .pm-circle {
+      position: absolute;
+      left: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #ffffff;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 12px rgba(46, 34, 68, 0.25);
+      z-index: 2;
+    }
+
+    .pm-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      font-weight: 500;
+      color: #333;
+      width: 100%;
+      text-align: center;
+      margin: 0;
+
+      /* ⭐ เพิ่มคำสั่งนี้: เลื่อนข้อความไปทางซ้าย 15px */
+      transform: translateX(-5px);
+    }
+
+    .pm-text span {
+      display: block;
+    }
+
+
+    /* สีเฉพาะ Section */
+    .bg-white .pm-title {
+      color: #2e2244 !important;
+    }
+
+    .bg-white .pm-item {
+      background: var(--pill-bg);
+    }
+
+    .bg-white .pm-circle {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .section-dark .pm-title {
+      color: #ffffff !important;
+    }
+
+    .section-dark .pm-item {
+      background: #ffffff;
+    }
+
+    /* วงกลมในส่วน Section Dark (พื้นหลังทอง ตัวหนังสือขาว) */
+    .section-dark .pm-circle {
+      background: var(--gold);
+      color: #ffffff;
+    }
+
+    /* =========================================
+       ⭐ ปุ่ม REQUEST A QUOTE (สลับสีอัตโนมัติ)
+       ========================================= */
+    .pm-quote-btn {
+      border: none;
+      border-radius: 999px;
+      padding: .7rem 2.5rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: 0.9rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-top: 25px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* กรณีพื้นหลังขาว -> ปุ่มสีน้ำเงินเข้ม */
+    .bg-white .pm-quote-btn {
+      background: var(--brand) !important;
+      color: #ffffff !important;
+      box-shadow: 0 6px 15px rgba(46, 34, 68, 0.25);
+    }
+
+    .bg-white .pm-quote-btn:hover {
+      background: #4e3b73 !important;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(46, 34, 68, 0.35);
+    }
+
+    /* กรณีพื้นหลังเข้ม -> ปุ่มสีทอง */
+    .section-dark .pm-quote-btn {
+      background: var(--gold) !important;
+      color: #ffffff !important;
+      /* ⭐ เปลี่ยนเป็นสีขาว */
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .section-dark .pm-quote-btn:hover {
+      background: #d4af37 !important;
+      color: #ffffff !important;
+      /* ⭐ ตอนชี้เมาส์ก็เป็นสีขาว */
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(202, 167, 106, 0.4);
+    }
+
+    @media (max-width:575.98px) {
+      .hero {
+        min-height: 340px;
+      }
+
+      .pm-item {
+        padding-left: 75px;
+      }
+
+      .pm-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 1rem;
+        left: -5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <section class="hero-wrap container-fluid px-0">
+    <div class="position-relative hero"></div>
+    <div class="hero-title">
+      <h1>Corporate Affairs Services</h1>
+    </div>
+  </section>
+
+  <div class="white-spacer"></div>
+
+  <section class="section-dark cs-services-wrap">
+    <div class="container">
+      <h3 class="section-title text-center mb-4">Our Services</h3>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="cs-card">
+            <div class="cs-card-inner">
+              <div class="cs-thumb">
+                <a href="#corporateSecretarial" class="cs-thumb-link"><img src="image/112.png"
+                    alt="Corporate Secretarial Services"></a>
+              </div>
+              <div class="cs-title">Corporate Secretarial Services</div>
+              <a href="#corporateSecretarial" class="cs-btn">Learn more ></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cs-card">
+            <div class="cs-card-inner">
+              <div class="cs-thumb">
+                <a href="#financeService" class="cs-thumb-link"><img src="image/c1.jpg"
+                    alt="Finance and Accounting Services"></a>
+              </div>
+              <div class="cs-title">Finance and Accounting Services</div>
+              <a href="#financeService" class="cs-btn">Learn more ></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cs-card">
+            <div class="cs-card-inner">
+              <div class="cs-thumb">
+                <a href="#hrmService" class="cs-thumb-link"><img src="image/hr.jpg" alt="HRM & Payroll Services"></a>
+              </div>
+              <div class="cs-title">HRM &amp; Payroll Service</div>
+              <a href="#hrmService" class="cs-btn">Learn more ></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cs-card">
+            <div class="cs-card-inner">
+              <div class="cs-thumb">
+                <a href="#goodReceiveService" class="cs-thumb-link"><img src="image/c3.jpg"
+                    alt="Good Receive & Asset Management Services"></a>
+              </div>
+              <div class="cs-title">Good Receive &amp; Asset Management Service</div>
+              <a href="#goodReceiveService" class="cs-btn">Learn more ></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cs-card">
+            <div class="cs-card-inner">
+              <div class="cs-thumb">
+                <a href="#procurementService" class="cs-thumb-link"><img src="image/c4.jpg"
+                    alt="Procurement Services"></a>
+              </div>
+              <div class="cs-title">Procurement Service</div>
+              <a href="#procurementService" class="cs-btn">Learn more ></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cs-card">
+            <div class="cs-card-inner">
+              <div class="cs-thumb">
+                <a href="#projectCoordination" class="cs-thumb-link"><img src="image/jjj.png"
+                    alt="Project Coordination Services"></a>
+              </div>
+              <div class="cs-title">Project Coordination</div>
+              <a href="#projectCoordination" class="cs-btn">Learn more ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="corporateSecretarial" class="pm-section bg-white">
+    <div class="container">
+      <h3 class="section-title text-center mb-4">
+        Corporate Secretarial Services
+      </h3>
+
+      <div class="row pm-grid">
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">01</div>
+            <div class="pm-text">
+              <span>Company Registration</span>
+              <span>&amp; Legal Filings</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">02</div>
+            <div class="pm-text">
+              <span>Shareholder &amp; Board</span>
+              <span>Documentation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">03</div>
+            <div class="pm-text">
+              <span>Board &amp; AGM</span>
+              <span>Management</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">04</div>
+            <div class="pm-text">
+              <span>Annual Insurance</span>
+              <span>Administration</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">05</div>
+            <div class="pm-text">
+              <span>Annual Valuation</span>
+              <span>Reporting</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">06</div>
+            <div class="pm-text">
+              <span>Regulatory Compliance</span>
+              <span>&amp; Reporting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button id="corpQuoteBtn" class="btn pm-quote-btn">REQUEST A QUOTE</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="financeService" class="pm-section section-dark">
+    <div class="container">
+      <h3 class="section-title text-center mb-4">
+        Finance and Accounting Services
+      </h3>
+
+      <div class="row pm-grid">
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">01</div>
+            <div class="pm-text">
+              <span>Bill Collection Services</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">02</div>
+            <div class="pm-text">
+              <span>Payment Services</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">03</div>
+            <div class="pm-text">
+              <span>Fixed-Asset Control</span>
+              <span>Services</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">04</div>
+            <div class="pm-text">
+              <span>Banking related Services</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">05</div>
+            <div class="pm-text">
+              <span>Accounting Services</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">06</div>
+            <div class="pm-text">
+              <span>Taxation Services</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button id="finQuoteBtn" class="btn pm-quote-btn">REQUEST A QUOTE</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="hrmService" class="pm-section bg-white">
+    <div class="container">
+      <h3 class="section-title text-center mb-4">
+        HRM & Payroll Service
+      </h3>
+
+      <div class="row pm-grid">
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">01</div>
+            <div class="pm-text">
+              <span>Register new staff with</span>
+              <span>Social security office</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">02</div>
+            <div class="pm-text">
+              <span>Setup the time attendance</span>
+              <span>and HR system</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">03</div>
+            <div class="pm-text">
+              <span>Prepare payroll</span>
+              <span>&amp; benefit</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">04</div>
+            <div class="pm-text">
+              <span>Submit monthly withholding</span>
+              <span>tax of employee (PND1) to</span>
+              <span>Revenue Department</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">05</div>
+            <div class="pm-text">
+              <span>Submit monthly</span>
+              <span>Social Security fund</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">06</div>
+            <div class="pm-text">
+              <span>Arrange for annual</span>
+              <span>staff insurance</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">07</div>
+            <div class="pm-text">
+              <span>Coordinate with actuarial</span>
+              <span>appraiser</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">08</div>
+            <div class="pm-text">
+              <span>Advice to setup PDPA</span>
+              <span>policy and manual</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button id="hrmQuoteBtn" class="btn pm-quote-btn">REQUEST A QUOTE</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="goodReceiveService" class="pm-section section-dark">
+    <div class="container">
+      <h3 class="section-title text-center mb-4">
+        Good Receive & Asset Management Service
+      </h3>
+
+      <div class="row pm-grid">
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">01</div>
+            <div class="pm-text">
+              <span>Asset registration</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">02</div>
+            <div class="pm-text">
+              <span>Controlling & coordinating</span>
+              <span>the acceptance of assets</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">03</div>
+            <div class="pm-text">
+              <span>Issue receiving documents for</span>
+              <span>supplier payment.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">04</div>
+            <div class="pm-text">
+              <span>Asset tags</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">05</div>
+            <div class="pm-text">
+              <span>Fixed asset</span>
+              <span>registration reports</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">06</div>
+            <div class="pm-text">
+              <span>Calculate asset</span>
+              <span>depreciation reports</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button id="goodQuoteBtn" class="btn pm-quote-btn">REQUEST A QUOTE</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="procurementService" class="pm-section bg-white">
+    <div class="container">
+      <h3 class="section-title text-center mb-4">
+        Procurement Service
+      </h3>
+
+      <div class="row pm-grid">
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">01</div>
+            <div class="pm-text">
+              <span>Coordinate with client about</span>
+              <span>products specifications</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">02</div>
+            <div class="pm-text">
+              <span>Coordinate with</span>
+              <span>the supplier</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">03</div>
+            <div class="pm-text">
+              <span>Product compose prices</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">04</div>
+            <div class="pm-text">
+              <span>Negotiate prices</span>
+              <span>and product terms</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">05</div>
+            <div class="pm-text">
+              <span>Coordinate & plan</span>
+              <span>the delivery of products</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">06</div>
+            <div class="pm-text">
+              <span>Inspect the products</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">07</div>
+            <div class="pm-text">
+              <span>Report & updating the status</span>
+              <span>of purchasing and delivery</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">08</div>
+            <div class="pm-text">
+              <span>Summary report</span>
+              <span>of purchase order</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button id="procQuoteBtn" class="btn pm-quote-btn">REQUEST A QUOTE</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="projectCoordination" class="pm-section section-dark">
+    <div class="container">
+      <h3 class="section-title text-center mb-4">
+        Project Coordination
+      </h3>
+
+      <div class="row pm-grid">
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">01</div>
+            <div class="pm-text">
+              <span>Deal Sourcing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">02</div>
+            <div class="pm-text">
+              <span>Project Formulation</span>
+              <span>for investors</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">03</div>
+            <div class="pm-text">
+              <span>Co-investor identification</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">04</div>
+            <div class="pm-text">
+              <span>Investment</span>
+              <span>Feasibility Studies</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">05</div>
+            <div class="pm-text">
+              <span>Bank Financing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">06</div>
+            <div class="pm-text">
+              <span>Underwriters Identification</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">07</div>
+            <div class="pm-text">
+              <span>Team Members Sourcing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">08</div>
+            <div class="pm-text">
+              <span>Coordination with</span>
+              <span>related Authorities</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">09</div>
+            <div class="pm-text">
+              <span>Closing Support</span>
+              <span>& Execution</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="pm-item">
+            <div class="pm-circle">10</div>
+            <div class="pm-text">
+              <span>Finance & Tax structure</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center">
+        <button id="coordQuoteBtn" class="btn pm-quote-btn">REQUEST A QUOTE</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-main">
+    <div class="container footer-top">
+      <div class="row align-items-center">
+        <div class="col-md-3 mb-3 mb-md-0 footer-logo text-md-start text-center">
+          <img src="image/1mtr.png" alt="MTR Asset Manager Logo">
+          <div class="footer-tagline">“Our service starts from the very first day of your investment journey .”</div>
+        </div>
+        <div class="col-md-5 mb-3 mb-md-0">
+          <div class="footer-center-text text-md-center text-center">
+            <div class="company-name">M.T.R. ASSET MANAGERS CO., LTD.</div>
+            <div>99/1, BJC 2 Tower, 11 Floor,</div>
+            <div>Soi Saengchan - Rubia, Sukhumvit 42 Road, Phrakanong,</div>
+            <div>Klongtoey, Bangkok 10110</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="footer-contact-box">
+            <div class="footer-contact-title">CONTACT US</div>
+            <div class="contact-row">
+              <div class="contact-label-cell"><i class="bi bi-envelope"></i><span>E-mail</span></div>
+              <div class="contact-value-cell">info@mtr.co.th.</div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-label-cell"><i class="bi bi-globe"></i><span>Website</span></div>
+              <div class="contact-value-cell">www.mtr.co.th</div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-label-cell"><i class="bi bi-telephone"></i><span>Phone</span></div>
+              <div class="contact-value-cell">02-381-8188 / Mobile : 083 - 032 - 8557</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2002 MTR Asset Manager Co., Ltd. All Rights Reserved.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // 1. โหลด Navbar
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('nav-placeholder').innerHTML = data;
+          initNavbarScripts();
+        })
+        .catch(error => console.error('Navbar Error:', error));
+
+      // 2. เรียกใช้ฟังก์ชัน Quote แบบใหม่ (ไม่ต้องเลือกรายการย่อย)
+      initSimpleQuoteButtons();
+    });
+
+    // ============================================================
+    // ⭐ Navbar Logic (คงเดิม)
+    // ============================================================
+    function initNavbarScripts() {
+      const navLinks = document.querySelectorAll('.navbar .nav-link, .navbar .dropdown-item');
+      const OFFSET = 110;
+      const path = window.location.pathname;
+      let page = path.split("/").pop();
+      if (page === '' || page === 'index.html') page = 'test1.html';
+
+      const servicePages = [
+        'engineering.html', 'corporate.html', 'ITServices.html', 'LuxuryHomeService.html', 'test4.html'
+      ];
+
+      navLinks.forEach(link => {
+        const hrefAttr = link.getAttribute('href');
+        if (!hrefAttr) return;
+        const linkPage = hrefAttr.split("/").pop();
+        link.classList.remove('active-page');
+
+        if (linkPage === page) {
+          link.classList.add('active-page');
+          const parentDropdown = link.closest('.dropdown');
+          if (parentDropdown) {
+            const toggle = parentDropdown.querySelector('.dropdown-toggle');
+            if (toggle) toggle.classList.add('active-page');
+          }
+        }
+
+        const isHomeLink = (hrefAttr === 'index.html' || hrefAttr === 'test1.html' || hrefAttr === '#home' || hrefAttr.includes('#home'));
+        const isCurrentPageHome = (page === 'index.html' || page === 'test1.html');
+        if (isHomeLink && isCurrentPageHome) {
+          link.classList.add('active-page');
+        }
+        if (link.id === 'servicesDropdown') {
+          if (servicePages.includes(page)) {
+            link.classList.add('active-page');
+          }
+        }
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          if (this.classList.contains('dropdown-toggle')) return;
+          const targetId = this.getAttribute('href');
+          if (targetId === '#' || !targetId.startsWith('#')) return;
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            const top = target.getBoundingClientRect().top + window.scrollY - OFFSET;
+            window.scrollTo({
+              top,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    }
+
+    // ⭐ ฟังก์ชันปุ่ม Quote แบบใหม่
+    function initSimpleQuoteButtons() {
+      function setupBtn(id, label) {
+        const btn = document.getElementById(id);
+        if (!btn) return;
+        btn.addEventListener('click', () => {
+          const url = 'index.html?from=' + encodeURIComponent(label) + '#contact';
+          window.location.href = url;
+        });
+      }
+      setupBtn('corpQuoteBtn', 'Corporate Affairs - Corporate Secretarial Services');
+      setupBtn('finQuoteBtn', 'Corporate Affairs - Finance & Accounting Services');
+      setupBtn('hrmQuoteBtn', 'Corporate Affairs - HRM & Payroll Services');
+      setupBtn('goodQuoteBtn', 'Corporate Affairs - Good Receive & Asset Management Services');
+      setupBtn('procQuoteBtn', 'Corporate Affairs - Procurement Services');
+      setupBtn('coordQuoteBtn', 'Corporate Affairs - Project Coordination');
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,318 @@
+/* ========================== GLOBAL SETTINGS ========================== */
+:root {
+    --brand: #392b5c;
+    --brand-2: #6b46e0;
+    --gold: #caa76a;
+    --ink: #f5f5f8;
+    --cardBorder: rgba(255, 255, 255, .22);
+}
+
+body {
+    font-family: 'Kanit', 'Poppins', system-ui, Segoe UI, Roboto, Arial;
+    color: var(--ink);
+    background: #fff;
+    padding-top: 110px;
+}
+
+/* ========================== HERO (Video Background) ========================== */
+.hero-wrap {
+    width: 90%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-top: 10px;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom center;
+    z-index: -1;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.05) 0%,
+            rgba(0, 0, 0, 0.20) 100%);
+    pointer-events: none;
+}
+
+.hero-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    padding: 24px;
+    z-index: 1;
+}
+
+.hero-inner h1 {
+    font-weight: 900;
+    font-size: clamp(36px, 6vw, 68px);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, .35);
+    margin: 0;
+}
+
+.white-spacer {
+    background: #fff;
+    padding: 28px 0;
+}
+
+/* ========================== SECTIONS ========================== */
+.section-dark {
+    background: var(--brand);
+    color: #fff;
+}
+
+.section-dark h2,
+.section-dark h3 {
+    color: #fff;
+}
+
+.section-pad {
+    padding: 56px 0;
+}
+
+.lead-muted {
+    color: #fff;
+    opacity: .9;
+}
+
+.section-title {
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ========================== SERVICES ========================== */
+.card-service {
+    border: 0;
+    box-shadow: 0 8px 20px rgba(23, 24, 35, .08);
+    border-radius: 14px;
+    transition: .25s;
+}
+
+.card-service:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(23, 24, 35, .12);
+}
+
+.card-service img {
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+.card-service .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.card-service h5 {
+    font-family: 'Kanit', 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #03010a;
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+}
+
+.btn-gold {
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    color: #ffffff !important;
+    font-weight: 400;
+    border-radius: 999px;
+    padding: 0.5rem 3rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-gold:hover {
+    background: #b5955b;
+    border-color: #b5955b;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(202, 167, 106, 0.4);
+}
+
+/* ========================== LOGO CAROUSEL ========================== */
+.logo-box {
+    padding: 10px;
+}
+
+.logo-frame {
+    width: 170px;
+    height: 110px;
+    object-fit: contain;
+    transition: transform .25s ease, filter .25s ease;
+}
+
+.logo-frame:hover {
+    transform: translateY(-6px) scale(1.06);
+    filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.25));
+}
+
+#logoCarousel .carousel-item .d-flex {
+    gap: 26px;
+}
+
+#logoCarousel .carousel-control-prev-icon,
+#logoCarousel .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    padding: 14px;
+}
+
+#logoCarousel .carousel-control-prev {
+    left: -60px;
+    width: 50px;
+}
+
+#logoCarousel .carousel-control-next {
+    right: -60px;
+    width: 50px;
+}
+
+@media (max-width: 768px) {
+    #logoCarousel .carousel-control-prev {
+        left: 0;
+    }
+
+    #logoCarousel .carousel-control-next {
+        right: 0;
+    }
+}
+
+/* ========================== CONTACT ========================== */
+.info-box {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(23, 24, 35, .08);
+}
+
+.contact-item {
+    margin-bottom: 14px;
+    color: #1a1d29;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.contact-item i {
+    margin-right: 8px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-item.email i,
+.contact-item.phone i {
+    color: #000;
+    background: none;
+}
+
+.contact-item.website i,
+.contact-item.address i {
+    color: #fff;
+    background: #000;
+}
+
+.contact-text {
+    background: #fff;
+    border: 1px solid #e0e5ee;
+    border-radius: 6px;
+    padding: .6rem .9rem;
+}
+
+.contact-qr {
+    background: #fff;
+    border: 1px solid #e0e5ee;
+    border-radius: 6px;
+    padding: 12px;
+    margin-top: 8px;
+}
+
+.form-head-bar {
+    background: var(--gold);
+    color: #ffff;
+    border-radius: 6px;
+    padding: .55rem 1rem;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.form-line .form-control {
+    border: 1px solid #e0e5ee;
+    border-radius: 6px;
+    padding: .55rem .9rem;
+}
+
+.btn-send {
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    color: #ffffff !important;
+    font-weight: 400;
+    border-radius: 999px;
+    padding: 0.5rem 3rem;
+    transition: all 0.3s ease;
+}
+
+.btn-send:hover {
+    background: #b5955b;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(202, 167, 106, 0.4);
+}
+
+.footer-bottom {
+    font-size: .9rem;
+    text-align: center;
+    padding: 10px 0;
+    background: #d4c095;
+    color: #312928;
+}
+
+@media (max-width: 575.98px) {
+    .hero {
+        min-height: 360px;
+    }
+}
+
+h3.text-center {
+    margin-top: -50px;
+}
+
+.section-dark h3.section-title {
+    margin-top: -30px;
+}
+
+#projects {
+    padding-bottom: 20px !important;
+}
+
+#projects .section-title {
+    font-weight: 700;
+    color: #ffffff;
+}

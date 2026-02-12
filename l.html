@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project References | MTR Asset Manager Co., Ltd.</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="navbar-styles.css" rel="stylesheet" />
+  <link href="footer-contact.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --brand: #392b5c;
+      --brand-2: #6b46e0;
+      --gold: #caa76a;
+      --ink: #1a1d29;
+      --cardBorder: rgba(255, 255, 255, .22);
+    }
+
+    body {
+      font-family: 'Kanit', 'Poppins', system-ui, Segoe UI, Roboto, Arial;
+      color: var(--ink);
+      background: #fff;
+      padding-top: 110px;
+    }
+
+    /* CSS: เมนูหน้าปัจจุบันให้เป็นสีทอง */
+    .navbar .nav-link.active-page,
+    .navbar .dropdown-item.active-page {
+      color: var(--gold) !important;
+      font-weight: 700;
+    }
+
+    /* ================= HERO WITH VIDEO BACKGROUND ================= */
+    .hero-wrap {
+      width: 90% !important;
+      padding: 0 !important;
+      margin-top: 10px !important;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 650px;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: bottom center;
+      z-index: -1;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,
+          rgba(0, 0, 0, 0.05) 0%,
+          rgba(0, 0, 0, 0.28) 100%);
+      z-index: 1;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .white-spacer {
+      background: #fff;
+      padding: 28px 0
+    }
+
+    /* ========= SECTION BASE ========= */
+    .section-dark {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .section-pad {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-weight: 900;
+    }
+
+    .lead-muted {
+      color: #ecebf4;
+      font-size: .9rem;
+    }
+
+    /* ========= INTRO STRIP ========= */
+    .ref-intro {
+      padding: 32px 0 36px;
+      text-align: center;
+    }
+
+    .ref-intro p {
+      max-width: 780px;
+      margin: 0 auto;
+      font-size: .9rem;
+    }
+
+    /* ปรับหัวข้อ Project References ให้อยู่กลางและขยับลงมาหน่อย */
+    .section-title.mb-3 {
+      text-align: center;
+      width: 100%;
+      margin-top: -50px !important;
+      /* ปรับให้ต่ำลง */
+    }
+
+    /* ========= LOGO CAROUSEL ========= */
+    .ref-logos-wrap {
+      background: #fff;
+      padding: 30px 0 60px;
+      /* เพิ่ม padding ล่างอีกนิด */
+    }
+
+    #clientsCarousel .carousel-inner {
+      padding: 8px 0;
+    }
+
+    #clientsCarousel .carousel-item .d-flex {
+      gap: 60px !important;
+      /* เพิ่มระยะห่างแนวนอน */
+      row-gap: 40px !important;
+      /* ระยะห่างแนวตั้ง */
+    }
+
+    .logo-box {
+      padding: 10px;
+    }
+
+    .logo-frame {
+      width: 140px;
+      height: 100px;
+      object-fit: contain;
+      background: transparent;
+      border: none;
+      transition: transform .25s ease, filter .25s ease;
+    }
+
+    .logo-frame:hover {
+      transform: translateY(-6px) scale(1.06);
+      filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.25));
+    }
+
+    #logoCarousel .carousel-item .d-flex {
+      gap: 20px;
+    }
+
+    /* ========= MAP SECTION ========= */
+    .ref-map-section .section-title {
+      font-family: 'Kanit', 'Poppins', sans-serif;
+      font-weight: 700 !important;
+      color: var(--brand);
+      margin-bottom: 40px;
+      margin-top: 20px;
+    }
+
+    .map-wrap {
+      position: relative;
+      width: 95%;
+      max-width: 803px;
+      margin: auto;
+      margin-top: 26px;
+      margin-bottom: 40px;
+    }
+
+    .map-wrap img {
+      width: 100%;
+      display: block;
+      user-select: none;
+      position: relative;
+      z-index: 5;
+    }
+
+    .connector-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 20;
+      overflow: visible;
+    }
+
+    .connector-path {
+      fill: none;
+      /* ⭐ แก้ไข: เปลี่ยนสีเส้นเป็นสีเทา (Solid Gray) เหมือนภาพตัวอย่าง */
+      stroke: #a0a0a0; 
+      stroke-width: 2px; /* ปรับความหนาให้ชัดขึ้นเล็กน้อย */
+      stroke-linecap: round;
+      /* เอา drop-shadow ออกเพื่อให้ดู Clean เหมือนภาพ */
+      /* filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); */ 
+      stroke-dasharray: 2000;
+      stroke-dashoffset: 2000;
+      animation: drawLine 0.6s ease-out forwards;
+    }
+
+    @keyframes drawLine {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .pin {
+      position: absolute;
+      padding: 7px 18px;
+      background: #2e2244;
+      color: #fff;
+      font-size: 0.9rem;
+      border-radius: 25px;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, .25);
+      transition: .25s;
+      z-index: 30;
+      white-space: nowrap;
+    }
+
+    .pin:hover {
+      background: #caa76a;
+      color: #222;
+      transform: translate(-50%, -50%) scale(1.12);
+    }
+
+    .project-gallery {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.95);
+      border: 2px solid #6b46e0;
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .14);
+      display: none;
+      animation: fadeIn .35s ease;
+      z-index: 40;
+      width: 260px;
+    }
+
+    .project-gallery,
+    .gallery-grid,
+    .gallery-card {
+      background: transparent !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    .gallery-grid {
+      display: block;
+    }
+
+    .project-gallery img {
+      width: 360px;
+      height: auto;
+      mix-blend-mode: multiply;
+    }
+
+    .gallery-caption {
+      font-size: .75rem;
+      margin-top: 4px;
+      color: #2e2244;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ========= PROJECT CARDS ========= */
+    .ref-projects-section .section-title {
+      font-family: 'Kanit', 'Poppins', sans-serif;
+      font-weight: 700 !important;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .ref-projects-section {
+      background: var(--brand);
+      color: #fff;
+      text-align: center;
+      margin-top: -30px;
+      padding: 80px 0 56px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .ref-card-grid .col-md-3 {
+      margin-bottom: 18px;
+    }
+
+    .ref-card-grid .col-md-3,
+    .ref-card-grid .col-sm-6 {
+      display: flex;
+    }
+
+    .ref-card {
+      background: #ffffff;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, .35);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      flex: 1 1 auto;
+    }
+
+    .ref-card>img:first-child {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .ref-card-logo {
+      background: #ffffff;
+      text-align: center;
+      border-bottom: 1px solid rgba(0, 0, 0, .06);
+      height: 70px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .ref-card-logo img {
+      max-height: 50px !important;
+      max-width: 80% !important;
+      object-fit: contain !important;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .ref-card-footer {
+      background: #b7965a;
+      color: #fff;
+      padding: 10px 14px;
+      font-size: .7rem;
+      text-align: left;
+      flex-grow: 1;
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .ref-card-footer ul {
+      padding-left: 16px;
+      margin: 0;
+      list-style: disc;
+    }
+
+    /* ⭐ เพิ่ม CSS สำหรับหัวข้อ MTR Provided */
+    .fw-head {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.75rem;
+    }
+
+    .ref-projects-secondary {
+      padding-top: 40px;
+      padding-bottom: 70px;
+    }
+
+    .ref-section-heading {
+      display: inline-block;
+      font-weight: 400;
+      font-size: 1.2rem;
+      letter-spacing: .06em;
+    }
+
+    .ref-section-heading::before,
+    .ref-section-heading::after {
+      content: '•';
+      color: var(--gold);
+      margin: 0 14px;
+    }
+
+    .ref-section-heading-wrap {
+      margin-top: -10px;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    #projects .section-title {
+      font-family: 'Kanit', 'Poppins', sans-serif;
+      font-weight: 700 !important;
+      color: #ffffff;
+      margin-top: 0;
+    }
+
+    #projects .lead-muted {
+      color: #ffffff !important;
+      opacity: 1 !important;
+      font-size: 1rem !important;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    #projects {
+      padding-bottom: 20px !important;
+    }
+
+    /* =======================================================
+       ⭐ BUTTON STYLES
+       ======================================================= */
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: #000 !important;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      background-size: 60%;
+    }
+
+    /* 1. Logo Carousel Buttons */
+    #clientsCarousel .carousel-control-prev {
+      left: -80px;
+      width: 60px;
+      opacity: 1;
+    }
+
+    #clientsCarousel .carousel-control-next {
+      right: -80px;
+      width: 60px;
+      opacity: 1;
+    }
+
+    /* 2. Hotel Carousel Buttons */
+    #hotelCarousel .carousel-control-prev {
+      left: -90px;
+      width: 60px;
+      opacity: 1;
+    }
+
+    #hotelCarousel .carousel-control-next {
+      right: -90px;
+      width: 60px;
+      opacity: 1;
+    }
+
+    /* Mobile Responsive for Buttons */
+    @media (max-width: 991px) {
+
+      #clientsCarousel .carousel-control-prev,
+      #hotelCarousel .carousel-control-prev {
+        left: 0;
+      }
+
+      #clientsCarousel .carousel-control-next,
+      #hotelCarousel .carousel-control-next {
+        right: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <section id="home" class="hero-wrap container-fluid px-0">
+    <div class="hero">
+      <video autoplay muted loop playsinline>
+        <source src="image/vdo.mp4" type="video/mp4">
+      </video>
+      <div class="hero-inner"></div>
+    </div>
+  </section>
+
+  <div class="white-spacer"></div>
+
+  <section id="projects" class="section-dark section-pad text-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+          <h3 class="section-title mb-3">Project References</h3>
+
+          <p class="lead-muted mb-4">
+            M.T.R. Asset Managers Co., Ltd. is adept at offering our knowledge and skills to various
+            clients, including Hotel & Service Apartment Projects, Office Building and Condominium Projects,
+            Shopping Center Projects and also luxury homes.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ref-logos-wrap">
+    <div class="container">
+
+      <div id="clientsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+        <div class="carousel-inner text-center">
+
+          <div class="carousel-item active">
+            <div class="d-flex justify-content-center align-items-center flex-wrap">
+              <div class="logo-box"><img src="image/logo1.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo2.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo3.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo4.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo5.png" class="logo-frame"></div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center align-items-center flex-wrap">
+              <div class="logo-box"><img src="image/logo6.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo7.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo8.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo9.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo10.png" class="logo-frame"></div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center align-items-center flex-wrap">
+              <div class="logo-box"><img src="image/logo11.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo12.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo13.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo14.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo15.png" class="logo-frame"></div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center align-items-center flex-wrap">
+              <div class="logo-box"><img src="image/logo16.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo17.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo18.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo19.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo20.png" class="logo-frame"></div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center align-items-center flex-wrap">
+              <div class="logo-box"><img src="image/logo21.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo22.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo23.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo24.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo25.png" class="logo-frame"></div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center align-items-center flex-wrap">
+              <div class="logo-box"><img src="image/logo26.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo27.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/logo28.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/1.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/2.png" class="logo-frame"></div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center align-items-center flex-wrap">
+              <div class="logo-box"><img src="image/3.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/5.png" class="logo-frame"></div>
+              <div class="logo-box"><img src="image/6.png" class="logo-frame"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#clientsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#clientsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ref-map-section">
+    <div class="container">
+      <h3 class="section-title mb-3">Our Project References</h3>
+
+
+      <div class="map-wrap">
+
+        <svg class="connector-svg" xmlns="http://www.w3.org/2000/svg">
+            </svg>
+
+        <img src="image/M1.png" alt="map">
+
+        <div class="pin" id="bkk" style="top:45%; left:40%;">Bangkok</div>
+        <div class="pin" id="chon" style="top:51%; left:53%;">Chonburi</div>
+        <div class="pin" id="prachuap" style="top:60%; left:40%;">Prachuap</div>
+        <div class="pin" id="surat" style="top:70%; left:41%;">Surat Thani</div>
+        <div class="pin" id="phangnga" style="top:75%; left:25%;">Phang Nga</div>
+        <div class="pin" id="phuket" style="top:80%; left:30%;">Phuket</div>
+
+        <div class="project-gallery box-bkk-1" style="top:15%; left:100%;">
+          <div class="gallery-grid">
+            <div class="gallery-card"><img src="image/212.png">
+              <div class="gallery-caption"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-gallery box-bkk-2" style="top:35%; left:100%;">
+          <div class="gallery-grid">
+            <div class="gallery-card"><img src="image/12.png">
+              <div class="gallery-caption"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-gallery box-bkk-3" style="top:15%; right:100%;">
+          <div class="gallery-grid">
+            <div class="gallery-card"><img src="image/11.png">
+              <div class="gallery-caption"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-gallery box-bkk-4" style="top:35%; right:100%;">
+          <div class="gallery-grid">
+            <div class="gallery-card"><img src="image/211.png">
+              <div class="gallery-caption"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-gallery box-chon-1" style="top:40%; left:100%;">
+          <div class="gallery-card"><img src="image/215.png">
+            <div class="gallery-caption"></div>
+          </div>
+        </div>
+
+        <div class="project-gallery box-prachuap-1" style="top:55%; left:70%;">
+          <div class="gallery-card"><img src="image/216.png">
+            <div class="gallery-caption"></div>
+          </div>
+        </div>
+
+        <div class="project-gallery box-surat-1" style="top:60%; left:70%;">
+          <div class="gallery-card"><img src="image/210.png">
+            <div class="gallery-caption"></div>
+          </div>
+        </div>
+
+        <div class="project-gallery box-surat-2" style="top:35%; right:80%;">
+          <div class="gallery-card"><img src="image/217.png">
+            <div class="gallery-caption"></div>
+          </div>
+        </div>
+
+        <div class="project-gallery box-phangnga-1" style="top:69%; right:100%;">
+          <div class="gallery-card"><img src="image/219.png">
+            <div class="gallery-caption"></div>
+          </div>
+        </div>
+
+        <div class="project-gallery box-phuket-1" style="top:65%; right:82%;">
+          <div class="gallery-card"><img src="image/218.png">
+            <div class="gallery-caption"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ref-projects-section">
+    <div class="container ref-hotel-carousel">
+      <h3 class="section-title mb-3">Project References</h3>
+      <div class="ref-section-heading-wrap">
+        <div class="ref-section-heading">
+          Hotel &amp; Service Apartment Projects
+        </div>
+      </div>
+
+
+      <div id="hotelCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <div class="row ref-card-grid">
+              <div class="col-md-3 col-sm-6">
+                <div class="ref-card">
+                  <img src="image/1000.png" alt="Millennium Hilton Bangkok">
+                  <div class="ref-card-logo">
+                    <img src="image/logo2.png" alt="Millennium Hilton Logo">
+                  </div>
+                  <div class="ref-card-footer">
+                    <div class="fw-head">MTR Provided</div>
+                    <ul>
+                      <li>Project &amp; Construction Management</li>
+                      <li>Construction Management</li>
+                      <li>Project Fixed Asset Control and Registration</li>
+                      <li>Owner Representative</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <div class="ref-card">
+                  <img src="image/1001.png" alt="The Nai Harn Phuket">
+                  <div class="ref-card-logo">
+                    <img src="image/nai.png" alt="The Nai Harn Logo">
+                  </div>
+                  <div class="ref-card-footer">
+                    <div class="fw-head">MTR Provided</div>
+                    <ul>
+                      <li>Project Management</li>
+                      <li>Construction Management</li>
+                      <li>Project Fixed Asset Control and Registration</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <div class="ref-card">
+                  <img src="image/124.png" alt="M Social Phuket">
+                  <div class="ref-card-logo">
+                    <img src="image/logo14.png" alt="M Social Logo">
+                  </div>
+                  <div class="ref-card-footer">
+                    <div class="fw-head">MTR Provided</div>
+                    <ul>
+                      <li>Project Fixed Asset Control and Registration</li>
+                      <li>Owner Representative</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <div class="ref-card">
+                  <img src="image/125.png" alt="Outrigger Laguna Phuket Beach Resort">
+                  <div class="ref-card-logo">
+                    <img src="image/logo10.png" alt="Outrigger Logo">
+                  </div>
+                  <div class="ref-card-footer">
+                    <div class="fw-head">MTR Provided</div>
+                    <ul>
+                      <li>Project Management</li>
+                      <li>Construction Management</li>
+                      <li>Project Fixed Asset Control and Registration</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row ref-card-grid">
+
+              <div class="col-md-3 col-sm-6">
+                <div class="ref-card">
+                  <img src="image/126.png" alt="NANATHAI">
+                  <div class="ref-card-logo">
+                    <img src="image/127.png" alt="Hotel Logo">
+                  </div>
+                  <div class="ref-card-footer">
+                    <div class="fw-head">MTR’s Provided</div>
+                    <ul>
+                      <li>Project management</li>
+                      <li>Construction contract control</li>
+                      <li>Project Fixed Asset Control and Registration</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <div class="ref-card">
+                  <img src="image/128.png" alt="HOTEL A">
+                  <div class="ref-card-logo">
+                    <img src="image/logo9.png" alt="Hotel Logo">
+                  </div>
+                  <div class="ref-card-footer">
+                    <div class="fw-head">MTR’s Provided</div>
+                    <ul>
+                      <li>Project Fixed Asset Control and Registration</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <div class="ref-card">
+                  <img src="image/129.png" alt="HOTEL B">
+                  <div class="ref-card-logo">
+                    <img src="image/logo9.png" alt="Hotel Logo">
+                  </div>
+                  <div class="ref-card-footer">
+                    <div class="fw-head">MTR’s Provided</div>
+                    <ul>
+                      <li>Project Fixed Asset Control and Registration</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <div class="ref-card">
+                  <img src="image/130.png" alt="COURTYARD">
+                  <div class="ref-card-logo">
+                    <img src="image/logo5.png" alt="Hotel Logo">
+                  </div>
+                  <div class="ref-card-footer">
+                    <div class="fw-head">MTR’s Provided</div>
+                    <ul>
+                      <li>Project management</li>
+                      <li>Facility management</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row ref-card-grid">
+
+              <div class="col-md-3 col-sm-6">
+                <div class="ref-card">
+                  <img src="image/131.png" alt="HOTEL C">
+                  <div class="ref-card-logo">
+                    <img src="image/logo6.png" alt="Hotel Logo">
+                  </div>
+                  <div class="ref-card-footer">
+                    <div class="fw-head">MTR’s Provided</div>
+                    <ul>
+                      <li>Project management</li>
+                      <li>Facility management</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <div class="ref-card">
+                  <img src="image/132.png" alt="HOTEL D">
+                  <div class="ref-card-logo">
+                    <img src="image/dusit.png" alt="Hotel Logo">
+                  </div>
+                  <div class="ref-card-footer">
+                    <div class="fw-head">MTR’s Provided</div>
+                    <ul>
+                      <li>Project management</li>
+                      <li>Facility management</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <div class="ref-card">
+                  <img src="image/133.png" alt="HOTEL E">
+                  <div class="ref-card-logo">
+                    <img src="image/logo21.png" alt="Hotel Logo">
+                  </div>
+                  <div class="ref-card-footer">
+                    <div class="fw-head">MTR’s Provided</div>
+                    <ul>
+                      <li>Project Management</li>
+                      <li>Construction Management</li>
+                      <li>Project Fixed Asset Control and Registration</li>
+                      <li>IT Consultant</li>
+                      <li>Procurement Service</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <div class="ref-card">
+                  <img src="image/134.png" alt="HOTEL F">
+                  <div class="ref-card-logo">
+                    <img src="image/logo11.png" alt="Hotel Logo">
+                  </div>
+                  <div class="ref-card-footer">
+                    <div class="fw-head">MTR’s Provided</div>
+                    <ul>
+                      <li>Project Management</li>
+                      <li>Construction Management</li>
+                      <li>Project Fixed Asset Control and Registration</li>
+                      <li>IT Consultant</li>
+                      <li>Procurement Service</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row ref-card-grid">
+
+              <div class="col-md-3 col-sm-6">
+                <div class="ref-card">
+                  <img src="image/135.png" alt="HOTEL G">
+                  <div class="ref-card-logo">
+                    <img src="image/logo8.png" alt="Hotel Logo">
+                  </div>
+                  <div class="ref-card-footer">
+                    <div class="fw-head">MTR’s Provided</div>
+                    <ul>
+                      <li>IT Consultant</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <div class="ref-card">
+                  <img src="image/136.png" alt="HOTEL H">
+                  <div class="ref-card-logo">
+                    <img src="image/logo7.png" alt="Hotel Logo">
+                  </div>
+                  <div class="ref-card-footer">
+                    <div class="fw-head">MTR’s Provided</div>
+                    <ul>
+                      <li>IT Consultant</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <div class="ref-card">
+                  <img src="image/137.png" alt="HOTEL I">
+                  <div class="ref-card-logo">
+                    <img src="image/2.png" alt="Hotel Logo">
+                  </div>
+                  <div class="ref-card-footer">
+                    <div class="fw-head">MTR’s Provided</div>
+                    <ul>
+                      <li>IT Consultant</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <div class="ref-card">
+                  <img src="image/138.png" alt="HOTEL J">
+                  <div class="ref-card-logo">
+                    <img src="image/logo1.png" alt="Hotel Logo">
+                  </div>
+                  <div class="ref-card-footer">
+                    <div class="fw-head">MTR’s Provided</div>
+                    <ul>
+                      <li>IT Consultant</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#hotelCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#hotelCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ref-projects-section ref-projects-secondary">
+    <div class="container">
+
+      <div class="ref-section-heading-wrap">
+        <div class="ref-section-heading">
+          Office Building &amp; Condominium Projects
+        </div>
+      </div>
+
+      <div class="row ref-card-grid mb-4">
+        <div class="col-md-3 col-sm-6">
+          <div class="ref-card">
+            <img src="image/139.png" alt="Exchange Tower">
+            <div class="ref-card-logo">
+              <img src="image/logo15.png" alt="Office Logo">
+            </div>
+            <div class="ref-card-footer">
+              <div class="fw-head">MTR’s Provided</div>
+              <ul>
+                <li>Project Management</li>
+                <li>Construction Management</li>
+                <li>Project Fixed Asset Control and Registration</li>
+                <li>IT Consultant</li>
+                <li>Procurement Service</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="ref-card">
+            <img src="image/140.png" alt="Millennium Residence">
+            <div class="ref-card-logo">
+              <img src="image/logo12.png" alt="Office Logo">
+            </div>
+            <div class="ref-card-footer">
+              <div class="fw-head">MTR’s Provided</div>
+              <ul>
+                <li>Project Management</li>
+                <li>Construction Management</li>
+                <li>Project Fixed Asset Control and Registration</li>
+                <li>IT Consultant</li>
+                <li>Procurement Service</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="ref-card">
+            <img src="image/141.png" alt="M Tower">
+            <div class="ref-card-logo">
+              <img src="image/logo14.png" alt="Office Logo">
+            </div>
+            <div class="ref-card-footer">
+              <div class="fw-head">MTR’s Provided</div>
+              <ul>
+                <li>Project Management</li>
+                <li>Construction Management</li>
+                <li>Project Fixed Asset Control and Registration</li>
+                <li>IT Consultant</li>
+                <li>Procurement Service</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="ref-card">
+            <img src="image/142.png" alt="K.R.S.">
+            <div class="ref-card-logo">
+              <img src="image/logo13.png" alt="Office Logo">
+            </div>
+            <div class="ref-card-footer">
+              <div class="fw-head">MTR’s Provided</div>
+              <ul>
+                <li>Project Management</li>
+                <li>Construction Management</li>
+                <li>Project Fixed Asset Control and Registration</li>
+                <li>IT Consultant</li>
+                <li>Procurement Service</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ref-section-heading-wrap mt-4">
+        <div class="ref-section-heading">
+          Shopping Center Projects
+        </div>
+      </div>
+
+      <div class="row ref-card-grid">
+        <div class="col-md-3 col-sm-6">
+          <div class="ref-card">
+            <img src="image/j.jpg" alt="Shopping Center A">
+            <div class="ref-card-logo">
+              <img src="image/logo26.png" alt="Shopping Logo">
+            </div>
+            <div class="ref-card-footer">
+              <div class="fw-head">MTR’s Provided</div>
+              <ul>
+                <li>Project Management</li>
+                <li>Construction Management</li>
+                <li>Project Fixed Asset Control and Registration</li>
+                <li>IT Consultant</li>
+                <li>Procurement Service</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="ref-card">
+            <img src="image/144.png" alt="Mercury Ville">
+            <div class="ref-card-logo">
+              <img src="image/logo18.png" alt="Shopping Logo">
+            </div>
+            <div class="ref-card-footer">
+              <div class="fw-head">MTR’s Provided</div>
+              <ul>
+                <li>Project Management</li>
+                <li>Construction Management</li>
+                <li>Project Fixed Asset Control and Registration</li>
+                <li>IT Consultant</li>
+                <li>Procurement Service</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="ref-card">
+            <img src="image/mil.jpg" alt="Market Village">
+            <div class="ref-card-logo">
+              <img src="image/mal.jpg" alt="Shopping Logo">
+            </div>
+            <div class="ref-card-footer">
+              <div class="fw-head">MTR’s Provided</div>
+              <ul>
+                <li>Project Management</li>
+                <li>Construction Management</li>
+                <li>Project Fixed Asset Control and Registration</li>
+                <li>IT Consultant</li>
+                <li>Procurement Service</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="ref-card">
+            <img src="image/r.jpg" alt="Community Mall">
+            <div class="ref-card-logo">
+              <img src="image/logo28.png" alt="Shopping Logo">
+            </div>
+            <div class="ref-card-footer">
+              <div class="fw-head">MTR’s Provided</div>
+              <ul>
+                <li>Project Management</li>
+                <li>Construction Management</li>
+                <li>Project Fixed Asset Control and Registration</li>
+                <li>IT Consultant</li>
+                <li>Procurement Service</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer-main">
+    <div class="container footer-top">
+      <div class="row align-items-center">
+        <div class="col-md-3 mb-3 mb-md-0 footer-logo text-md-start text-center">
+          <img src="image/1mtr.png" alt="MTR Asset Manager Logo">
+          <div class="footer-tagline">“Our service starts from the very first day of your investment journey .”</div>
+        </div>
+        <div class="col-md-5 mb-3 mb-md-0">
+          <div class="footer-center-text text-md-center text-center">
+            <div class="company-name">M.T.R. ASSET MANAGERS CO., LTD.</div>
+            <div>99/1, BJC 2 Tower, 11 Floor,</div>
+            <div>Soi Saengchan - Rubia, Sukhumvit 42 Road, Phrakanong,</div>
+            <div>Klongtoey, Bangkok 10110</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="footer-contact-box">
+            <div class="footer-contact-title">CONTACT US</div>
+
+            <div class="contact-row">
+              <div class="contact-label-cell">
+                <i class="bi bi-envelope"></i>
+                <span>E-mail</span>
+              </div>
+              <div class="contact-value-cell">
+                info@mtr.co.th.
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="contact-label-cell">
+                <i class="bi bi-globe"></i>
+                <span>Website</span>
+              </div>
+              <div class="contact-value-cell">
+                www.mtr.co.th
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="contact-label-cell">
+                <i class="bi bi-telephone"></i>
+                <span>Phone</span>
+              </div>
+              <div class="contact-value-cell">
+                02-381-8188 / Mobile : 083 - 032 - 8557
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2002 MTR Asset Manager Co., Ltd. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // 1. Load Navbar
+      fetch('navbar.html')
+        .then(response => {
+          if (!response.ok) throw new Error("Could not load navbar");
+          return response.text();
+        })
+        .then(html => {
+          document.getElementById('nav-placeholder').innerHTML = html;
+          initNavbarScripts();
+        })
+        .catch(error => console.error('Error:', error));
+
+      // 2. สั่งทำงานส่วนอื่นๆ
+      initGeneralScripts();
+
+      // 3. เริ่มทำงานระบบ Map (เรียกฟังก์ชันที่อัปเดตแล้ว)
+      initMapLogic();
+    });
+
+    // ============================================================
+    // ⭐ ฟังก์ชันจัดการ Navbar (แก้ไขให้รองรับ about.html แบบมาตรฐาน)
+    // ============================================================
+    function initNavbarScripts() {
+      // เลือกทั้งเมนูหลักและเมนูย่อย
+      const navLinks = document.querySelectorAll('.navbar .nav-link, .navbar .dropdown-item');
+
+      // ⭐ แก้ไข 2: ตั้งค่า OFFSET ให้เท่าความสูง Navbar (110px)
+      const OFFSET = 110;
+
+      // 1. หาชื่อไฟล์ปัจจุบัน
+      const path = window.location.pathname;
+      let page = path.split("/").pop();
+
+      // ถ้าหน้า Home ไม่มีชื่อไฟล์ (Root) หรือเป็น index.html ให้ถือเป็น test1.html (ตาม Logic เดิม)
+      if (page === '' || page === 'index.html') page = 'test1.html';
+
+      const servicePages = [
+        'engineering.html', 'corporate.html', 'ITServices.html', 'LuxuryHomeService.html'
+      ];
+
+      navLinks.forEach(link => {
+        // ดึง href มา (เช่น "about.html" หรือ "project.html")
+        const hrefAttr = link.getAttribute('href');
+        if (!hrefAttr) return;
+
+        // ดึงเฉพาะชื่อไฟล์จาก href
+        const linkPage = hrefAttr.split("/").pop();
+
+        // ล้างสถานะเดิมก่อน
+        link.classList.remove('active-page');
+
+        // --- Logic 1: เช็คชื่อไฟล์ตรงๆ ---
+        // (ถ้าชื่อไฟล์ปัจจุบัน == ชื่อลิงก์ในเมนู)
+        if (linkPage === page) {
+          link.classList.add('active-page');
+
+          // ถ้าเป็นเมนูย่อย ให้ไปสั่งให้หัวข้อเมนู (Dropdown Toggle) ติดสีทองด้วย
+          const parentDropdown = link.closest('.dropdown');
+          if (parentDropdown) {
+            const toggle = parentDropdown.querySelector('.dropdown-toggle');
+            if (toggle) toggle.classList.add('active-page');
+          }
+        }
+
+        // --- Logic 2: เช็คว่าเป็นปุ่ม Home หรือไม่ ---
+        const isHomeLink = (hrefAttr === 'index.html' || hrefAttr === 'test1.html' || hrefAttr === '#home' || hrefAttr.includes('#home'));
+        const isCurrentPageHome = (page === 'index.html' || page === 'test1.html');
+
+        if (isHomeLink && isCurrentPageHome) {
+          link.classList.add('active-page');
+
+          link.addEventListener('click', (e) => {
+            if (isCurrentPageHome && hrefAttr.includes('#')) {
+              const hash = hrefAttr.includes('#') ? '#' + hrefAttr.split('#')[1] : '';
+              const target = document.querySelector(hash);
+              if (target) {
+                e.preventDefault();
+                const top = target.getBoundingClientRect().top + window.scrollY - OFFSET;
+                window.scrollTo({
+                  top,
+                  behavior: 'smooth'
+                });
+                const navMenu = document.querySelector('.navbar-collapse');
+                if (navMenu && navMenu.classList.contains('show')) {
+                  new bootstrap.Collapse(navMenu).hide();
+                }
+              }
+            }
+          });
+        }
+
+        // --- Logic 3: เช็คปุ่ม Services ---
+        if (link.id === 'servicesDropdown') {
+          if (servicePages.includes(page)) {
+            link.classList.add('active-page');
+          }
+        }
+      });
+
+      // ============================================================
+      // ⭐ แก้ไข 3: เพิ่มส่วนนี้ เพื่อให้ทุกลิงก์ในหน้านี้เลื่อนนุ่มๆ แบบมี Offset
+      // ============================================================
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          // ไม่ทำงานถ้าเป็น Dropdown หรือลิงก์เปล่า
+          if (this.classList.contains('dropdown-toggle')) return;
+          const targetId = this.getAttribute('href');
+          if (targetId === '#' || !targetId.startsWith('#')) return;
+
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            // คำนวณระยะโดยลบ OFFSET ออก
+            const top = target.getBoundingClientRect().top + window.scrollY - OFFSET;
+            window.scrollTo({
+              top,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    }
+
+    // ================== ฟังก์ชันส่วนอื่นๆ (คงเดิม) ==================
+    function initGeneralScripts() {
+      /* Logo Carousel */
+      const logoCarousel = document.querySelector('#logoCarousel');
+      if (logoCarousel) {
+        new bootstrap.Carousel(logoCarousel, {
+          interval: 2500,
+          ride: 'carousel',
+          wrap: true
+        });
+      }
+
+      /* Contact Form Logic */
+      const contactForm = document.getElementById('contactForm');
+      const alertSuccess = document.getElementById('formAlert');
+      const alertError = document.getElementById('formAlertError');
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          if (alertSuccess) alertSuccess.classList.add('d-none');
+          if (alertError) alertError.classList.add('d-none');
+
+          const name = document.getElementById('name').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const phone = document.getElementById('phone').value.trim();
+          const message = document.getElementById('message').value.trim();
+          const to = 'nasrun0901791@gmail.com';
+          const subject = encodeURIComponent(name ? `Enquiry from ${name}` : 'Enquiry from website');
+          const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`);
+
+          try {
+            window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`, '_blank');
+            if (alertSuccess) alertSuccess.classList.remove('d-none');
+            contactForm.reset();
+          } catch (err) {
+            if (alertError) alertError.classList.remove('d-none');
+          }
+        });
+      }
+
+      /* Handle ?from= Parameter */
+      const params = new URLSearchParams(window.location.search);
+      const fromParam = params.get('from');
+      if (fromParam) {
+        const messageField = document.getElementById('message');
+        if (messageField) {
+          const prefix = `[From: ${fromParam}]\n\n`;
+          if (!messageField.value.includes(prefix)) {
+            messageField.value = prefix + (messageField.value || '');
+          }
+        }
+        setTimeout(() => {
+          const contactSection = document.getElementById('contact');
+          if (contactSection) {
+            contactSection.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        }, 500);
+      }
+    }
+
+    // ⭐ Map Logic (ฉบับแก้ไข: ใช้เส้นหักมุมฉากแบบ Mind Map พร้อมความโค้งมน)
+    function initMapLogic() {
+      const mapping = {
+        bkk: ["bkk-1", "bkk-2", "bkk-3", "bkk-4"],
+        chon: ["chon-1"],
+        prachuap: ["prachuap-1"],
+        surat: ["surat-1", "surat-2"],
+        phangnga: ["phangnga-1"],
+        phuket: ["phuket-1"]
+      };
+
+      const mapWrap = document.querySelector(".map-wrap");
+      const svgContainer = document.querySelector(".connector-svg");
+
+      if (!svgContainer) return;
+
+      Object.keys(mapping).forEach(province => {
+        const pin = document.getElementById(province);
+        if (pin) {
+          pin.addEventListener("mouseenter", () => showProvince(province));
+          pin.addEventListener("mouseleave", () => {
+            setTimeout(() => {
+              if (!isHoverProvince(province)) hideAll();
+            }, 150);
+          });
+        }
+
+        mapping[province].forEach(boxId => {
+          const box = document.querySelector(".box-" + boxId);
+          if (box) {
+            box.addEventListener("mouseenter", () => showProvince(province));
+            box.addEventListener("mouseleave", hideAll);
+          }
+        });
+      });
+
+      function showProvince(province) {
+        hideAll();
+        const pin = document.getElementById(province);
+        const pinRect = pin.getBoundingClientRect();
+        const mapRect = mapWrap.getBoundingClientRect();
+
+        mapping[province].forEach(id => {
+          const box = document.querySelector(".box-" + id);
+          if (box) {
+            box.style.display = "block";
+            const boxRect = box.getBoundingClientRect();
+
+            // 1. จุดเริ่มต้น (กลาง Pin)
+            const startX = (pinRect.left + pinRect.width / 2) - mapRect.left;
+            const startY = (pinRect.top + pinRect.height / 2) - mapRect.top;
+
+            // 2. จุดปลายทาง
+            let endX, endY;
+            if (boxRect.left > pinRect.left) {
+              // กล่องอยู่ขวา
+              endX = (boxRect.left) - mapRect.left;
+            } else {
+              // กล่องอยู่ซ้าย
+              endX = (boxRect.left + boxRect.width) - mapRect.left;
+            }
+            
+            endY = (boxRect.top + boxRect.height / 2) - mapRect.top;
+
+            // ========================================================
+            // ⭐ 3. คำนวณเส้นแบบ Orthogonal (หักมุมฉาก) พร้อมโค้งมน
+            // ========================================================
+            
+            const midX = (startX + endX) / 2;
+            const radius = 20; // รัศมีความโค้ง
+
+            // คำนวณทิศทางเพื่อวาดส่วนโค้ง
+            const dirX = (endX > startX) ? 1 : -1;
+            const dirY = (endY > startY) ? 1 : -1;
+
+            // ปรับรัศมีให้เล็กลงถ้าจุดอยู่ใกล้กันเกินไป
+            const r = Math.min(radius, Math.abs(midX - startX) / 2, Math.abs(endY - startY) / 2);
+
+            // สร้าง Path Command
+            // Logic: Start -> Horizontal to Mid -> Curve -> Vertical to Target Y -> Curve -> Horizontal to End
+            let d = `M ${startX} ${startY}`;
+
+            // 1. วาดเส้นนอนไปหาจุดหักแรก (ตรงกลาง)
+            // ถ้าห่างกันพอสมควร ให้วาดเส้นแล้วโค้ง
+            if (Math.abs(midX - startX) > r) {
+                d += ` L ${midX - (r * dirX)} ${startY}`;
+                d += ` Q ${midX} ${startY}, ${midX} ${startY + (r * dirY)}`;
+            } else {
+                // ถ้าใกล้มาก ให้ลากไปเลย
+                 d += ` L ${midX} ${startY}`;
+            }
+
+            // 2. วาดเส้นตั้งไปหาระดับความสูงปลายทาง
+            if (Math.abs(endY - startY) > r) {
+                d += ` L ${midX} ${endY - (r * dirY)}`;
+                d += ` Q ${midX} ${endY}, ${midX + (r * dirX)} ${endY}`;
+            } else {
+                 d += ` L ${midX} ${endY}`;
+            }
+
+            // 3. วาดเส้นนอนเข้าหากล่อง
+            d += ` L ${endX} ${endY}`;
+
+            const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            path.setAttribute("d", d);
+            path.classList.add("connector-path");
+            svgContainer.appendChild(path);
+          }
+        });
+      }
+
+      function hideAll() {
+        document.querySelectorAll(".project-gallery").forEach(x => x.style.display = "none");
+        const paths = svgContainer.querySelectorAll('path');
+        paths.forEach(p => p.remove());
+      }
+
+      function isHoverProvince(province) {
+        return mapping[province].some(id => {
+          const box = document.querySelector(".box-" + id);
+          return box && box.matches(":hover");
+        });
+      }
+    }
+  </script>
+
+</body>
+
+</html>

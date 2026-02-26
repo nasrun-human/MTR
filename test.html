@@ -623,3 +623,63 @@
 </body>
 
 </html>
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Load Navbar
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('nav-placeholder').innerHTML = data;
+        initNavbarScripts();
+      })
+      .catch(error => console.error('Navbar Error:', error));
+
+    // 2. Logic URL Params
+    const params = new URLSearchParams(window.location.search);
+    const fromParam = params.get('from');
+    if (fromParam) {
+      const messageField = document.getElementById('message');
+      if (messageField) {
+        messageField.value = `[Request a quote from: ${fromParam}]\n\n`;
+      }
+      setTimeout(() => {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          const top = contactSection.getBoundingClientRect().top + window.scrollY - 110;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      }, 500);
+    }
+
+    // 3. Form Logic
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const message = document.getElementById('message').value.trim();
+        const to = 'it_support@mtr.co.th';
+        const subject = encodeURIComponent(`Enquiry from ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`);
+
+        try {
+          window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`, '_blank');
+          document.getElementById('formAlert').classList.remove('d-none');
+          contactForm.reset();
+        } catch (err) {
+          document.getElementById('formAlertError').classList.remove('d-none');
+        }
+      });
+    }
+  });
+
+  function initNavbarScripts() {
+    // ฟังก์ชันจัดการ Navbar ของคุณ
+  }
+</script>

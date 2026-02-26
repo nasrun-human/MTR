@@ -191,16 +191,39 @@
       color: #fff;
     }
 
-    @media (max-width:991.98px) {
-      .job-form-card {
-        margin: 32px auto 0;
+
+    /* ขยับเนื้อหาฝั่งซ้ายมาทางขวาให้มากขึ้นเฉพาะหน้าจอคอมพิวเตอร์ */
+    @media (min-width: 992px) {
+      .job-left-content {
+        padding-left: 100px;
+        /* เพิ่มจาก 60px เป็น 100px เพื่อให้ขยับมาขวามากขึ้น */
+        padding-right: 40px;
+        /* เพิ่มระยะห่างระหว่างเนื้อหากับฟอร์มไม่ให้ติดกันเกินไป */
       }
+    }
+
+    /* ปรับหัวข้อ Position ให้ดูสง่าขึ้น */
+    .job-left-title {
+      font-weight: 900;
+      font-size: 1.8rem;
+      /* ขยายขนาดอีกนิด */
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     @media (max-width:575.98px) {
       .hero-job {
         min-height: 340px;
       }
+    }
+
+    /* --- เพิ่ม CSS เส้นขาวคั่นตรงนี้ --- */
+    .job-separator {
+      border: 0;
+      border-top: 1px solid #ffffff;
+      margin: 50px 0;
+      opacity: 0.8;
     }
   </style>
 </head>
@@ -222,7 +245,8 @@
   <section class="job-section">
     <div class="container">
       <div class="row">
-        <div class="col-lg-5 mb-4 mb-lg-0">
+        <div class="col-lg-5 mb-4 mb-lg-0 job-left-content">
+
           <div class="job-left-title">[Position]</div>
 
           <div class="job-block">
@@ -251,10 +275,107 @@
               <li>Benefit 3</li>
             </ul>
           </div>
+
+          <hr class="job-separator">
+
+          <div class="job-left-title">[Position]</div>
+
+          <div class="job-block">
+            <div class="job-block-title">[Responsibility]</div>
+            <ul class="job-block-list">
+              <li>Responsibility 1</li>
+              <li>Responsibility 2</li>
+              <li>Responsibility 3</li>
+            </ul>
+          </div>
+
+          <div class="job-block">
+            <div class="job-block-title">[Qualification]</div>
+            <ul class="job-block-list">
+              <li>Qualification 1</li>
+              <li>Qualification 2</li>
+              <li>Qualification 3</li>
+            </ul>
+          </div>
+
+          <div class="job-block">
+            <div class="job-block-title">[Benefit]</div>
+            <ul class="job-block-list">
+              <li>Benefit 1</li>
+              <li>Benefit 2</li>
+              <li>Benefit 3</li>
+            </ul>
+          </div>
+
+          <hr class="job-separator">
+
+          <div class="job-left-title">[Position]</div>
+
+          <div class="job-block">
+            <div class="job-block-title">[Responsibility]</div>
+            <ul class="job-block-list">
+              <li>Responsibility 1</li>
+              <li>Responsibility 2</li>
+              <li>Responsibility 3</li>
+            </ul>
+          </div>
+
+          <div class="job-block">
+            <div class="job-block-title">[Qualification]</div>
+            <ul class="job-block-list">
+              <li>Qualification 1</li>
+              <li>Qualification 2</li>
+              <li>Qualification 3</li>
+            </ul>
+          </div>
+
+          <div class="job-block">
+            <div class="job-block-title">[Benefit]</div>
+            <ul class="job-block-list">
+              <li>Benefit 1</li>
+              <li>Benefit 2</li>
+              <li>Benefit 3</li>
+            </ul>
+          </div>
+
+          <hr class="job-separator">
+
+          <div class="job-left-title">[Position]</div>
+
+          <div class="job-block">
+            <div class="job-block-title">[Responsibility]</div>
+            <ul class="job-block-list">
+              <li>Responsibility 1</li>
+              <li>Responsibility 2</li>
+              <li>Responsibility 3</li>
+            </ul>
+          </div>
+
+          <div class="job-block">
+            <div class="job-block-title">[Qualification]</div>
+            <ul class="job-block-list">
+              <li>Qualification 1</li>
+              <li>Qualification 2</li>
+              <li>Qualification 3</li>
+            </ul>
+          </div>
+
+          <div class="job-block">
+            <div class="job-block-title">[Benefit]</div>
+            <ul class="job-block-list">
+              <li>Benefit 1</li>
+              <li>Benefit 2</li>
+              <li>Benefit 3</li>
+            </ul>
+          </div>
+
         </div>
 
-        <div class="col-lg-7 d-flex justify-content-center">
-          <form class="job-form-card" id="jobForm">
+        <div class="col-lg-7 d-flex justify-content-center align-self-start">
+          <form class="job-form-card" id="jobForm" enctype="multipart/form-data">
+
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
             <div class="mb-3">
               <label for="name">NAME</label>
               <input type="text" class="form-control" id="name" name="name" required />
@@ -278,8 +399,13 @@
             </div>
 
             <div class="mb-3">
-              <label for="message">MESSAGE</label>
-              <textarea class="form-control" id="message" name="message"></textarea>
+              <label for="position">POSITION</label>
+              <input class="form-control" id="position" name="position"></input>
+            </div>
+
+            <div class="mb-3">
+              <label for="experience">EXPERIENCE</label>
+              <textarea class="form-control" id="experience" name="experience"></textarea>
             </div>
 
             <button type="submit" class="job-submit-btn">SUBMIT</button>
@@ -337,7 +463,7 @@
                 <span>Phone</span>
               </div>
               <div class="contact-value-cell">
-                02-381-8188 / Mobile : 083 - 032 - 8557
+                02-381-8188
               </div>
             </div>
 
@@ -355,8 +481,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-
-      // 1. โหลด Navbar
+      // 1. Load Navbar
       fetch('navbar.html')
         .then(response => response.text())
         .then(data => {
@@ -365,135 +490,47 @@
         })
         .catch(error => console.error('Navbar Error:', error));
 
-      // ============================================================
-      // ⭐ Logic: สั่งให้ปุ่ม SUBMIT เปิด Gmail
-      // ============================================================
+      // 2. Web3Forms Logic
       const jobForm = document.getElementById('jobForm');
-
       if (jobForm) {
         jobForm.addEventListener('submit', (e) => {
-          e.preventDefault(); // ห้ามรีเฟรชหน้า
+          e.preventDefault();
 
-          // แจ้งเตือนลูกค้าเรื่อง Resume ก่อนเลย
-          const confirmSend = confirm("⚠️ โปรดทราบ / Attention:\n\nระบบจะเปิดหน้าต่างอีเมล (Gmail) ขึ้นมา\nกรุณา 'กดแนบไฟล์ Resume' ในอีเมลอีกครั้งก่อนกดส่งนะครับ\n\nPlease manually attach your Resume in the email client.");
+          const submitBtn = jobForm.querySelector('button[type="submit"]');
+          const originalBtnText = submitBtn.textContent;
+          submitBtn.textContent = 'SENDING...';
+          submitBtn.disabled = true;
 
-          if (!confirmSend) return; // ถ้ากด Cancel ก็ไม่ทำต่อ
+          const formData = new FormData(jobForm);
 
-          // ดึงค่าจากฟอร์ม
-          const name = document.getElementById('name').value.trim();
-          const email = document.getElementById('email').value.trim();
-          const phone = document.getElementById('phone').value.trim();
-          const message = document.getElementById('message').value.trim();
-
-          // อีเมลปลายทาง
-          const to = 'nasrun0901791@gmail.com';
-
-          const subject = encodeURIComponent(`Job Application: ${name}`);
-
-          // เนื้อหาอีเมล พร้อมคำเตือนเรื่องไฟล์แนบ
-          const bodyContent = `*** PLEASE ATTACH YOUR RESUME MANUALLY ***\n` +
-            `*** กรุณาแนบไฟล์ Resume ของท่านด้วยครับ ***\n\n` +
-            `Name: ${name}\n` +
-            `Email: ${email}\n` +
-            `Phone: ${phone}\n` +
-            `Message:\n${message}`;
-
-          const body = encodeURIComponent(bodyContent);
-
-          // เปิดหน้า Gmail
-          try {
-            window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`, '_blank');
-
-            // ล้างค่าในฟอร์ม
-            jobForm.reset();
-          } catch (err) {
-            alert("ไม่สามารถเปิด Gmail ได้ กรุณาลองใหม่อีกครั้ง");
-          }
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+          })
+            .then(async (response) => {
+              let json = await response.json();
+              if (response.status == 200) {
+                alert("Your application has been sent successfully!");
+                jobForm.reset();
+              } else {
+                console.log(response);
+                alert("Oops! Something went wrong: " + json.message);
+              }
+            })
+            .catch((error) => {
+              console.error('Submission Error:', error);
+              alert("Oops! Something went wrong. Please try again.");
+            })
+            .finally(() => {
+              submitBtn.textContent = originalBtnText;
+              submitBtn.disabled = false;
+            });
         });
       }
-
     });
 
-    // ============================================================
-    // ⭐ ฟังก์ชันจัดการ Navbar
-    // ============================================================
     function initNavbarScripts() {
-      const navLinks = document.querySelectorAll('.navbar .nav-link, .navbar .dropdown-item');
-      const OFFSET = 110;
-
-      const path = window.location.pathname;
-      let page = path.split("/").pop();
-      if (page === '') page = 'index.html';
-
-      const servicePages = [
-        'engineering.html', 'corporate.html', 'ITServices.html', 'LuxuryHomeService.html'
-      ];
-
-      navLinks.forEach(link => {
-        const hrefAttr = link.getAttribute('href');
-        if (!hrefAttr) return;
-        const linkPage = hrefAttr.split("/").pop();
-
-        link.classList.remove('active-page');
-
-        if (linkPage === page) {
-          link.classList.add('active-page');
-          const parentDropdown = link.closest('.dropdown');
-          if (parentDropdown) {
-            const toggle = parentDropdown.querySelector('.dropdown-toggle');
-            if (toggle) toggle.classList.add('active-page');
-          }
-        }
-
-        const isHomeLink = (hrefAttr === 'index.html' || hrefAttr === 'test1.html' || hrefAttr === '#home' || hrefAttr.includes('#home'));
-        const isCurrentPageHome = (page === 'index.html' || page === 'test1.html');
-
-        if (isHomeLink && isCurrentPageHome) {
-          link.classList.add('active-page');
-          link.addEventListener('click', (e) => {
-            if (isCurrentPageHome && hrefAttr.includes('#')) {
-              const hash = hrefAttr.includes('#') ? '#' + hrefAttr.split('#')[1] : '';
-              const target = document.querySelector(hash);
-              if (target) {
-                e.preventDefault();
-                const top = target.getBoundingClientRect().top + window.scrollY - OFFSET;
-                window.scrollTo({
-                  top,
-                  behavior: 'smooth'
-                });
-                const navMenu = document.querySelector('.navbar-collapse');
-                if (navMenu && navMenu.classList.contains('show')) {
-                  new bootstrap.Collapse(navMenu).hide();
-                }
-              }
-            }
-          });
-        }
-
-        if (link.id === 'servicesDropdown') {
-          if (servicePages.includes(page)) {
-            link.classList.add('active-page');
-          }
-        }
-      });
-
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          if (this.classList.contains('dropdown-toggle')) return;
-          const targetId = this.getAttribute('href');
-          if (targetId === '#' || !targetId.startsWith('#')) return;
-
-          const target = document.querySelector(targetId);
-          if (target) {
-            e.preventDefault();
-            const top = target.getBoundingClientRect().top + window.scrollY - OFFSET;
-            window.scrollTo({
-              top,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
+      // โค้ดสำหรับ Navbar (ถ้ามี)
     }
   </script>
 </body>

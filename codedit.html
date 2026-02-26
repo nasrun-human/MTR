@@ -1,0 +1,618 @@
+<div class="white-spacer"></div>
+
+<section class="section-dark lux-services-wrap">
+    <div class="container">
+        <h3 class="section-title text-center mb-4">Our Services</h3>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4">
+                <div class="lux-card">
+                    <div class="lux-card-inner">
+                        <div class="lux-thumb">
+                            <a href="engineering.html#projectManagement" class="lux-thumb-link">
+                                <img src="image/pm.png" alt="Project Management">
+                            </a>
+                        </div>
+                        <div class="lux-title">Project Management</div>
+                        <a href="engineering.html#projectManagement" class="lux-btn">Learn more ></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="lux-card">
+                    <div class="lux-card-inner">
+                        <div class="lux-thumb">
+                            <a href="engineering.html#constructionManagement" class="lux-thumb-link">
+                                <img src="image/pm2.png" alt="Construction Management">
+                            </a>
+                        </div>
+                        <div class="lux-title">Construction Management</div>
+                        <a href="engineering.html#constructionManagement" class="lux-btn">Learn more ></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="lux-card">
+                    <div class="lux-card-inner">
+                        <div class="lux-thumb">
+                            <a href="corporate.html#goodReceiveService" class="lux-thumb-link">
+                                <img src="image/c3.jpg" alt="Asset Registration">
+                            </a>
+                        </div>
+                        <div class="lux-title">Asset Registration</div>
+                        <a href="corporate.html#goodReceiveService" class="lux-btn">Learn more ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <button id="luxuryQuoteBtn" class="btn pm-quote-btn">REQUEST A QUOTE</button>
+        </div>
+    </div>
+</section>
+
+/* --- จบส่วนแก้ไข --- */
+/*--แก้หน้าjobaply---*/
+
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Job Apply | MTR Asset Manager Co., Ltd.</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700;900&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="image/icon-new.png">
+    <link href="navbar-styles.css" rel="stylesheet" />
+    <link href="footer-contact.css" rel="stylesheet" />
+
+    <style>
+        :root {
+            --brand: #2e2244;
+            --brand-2: #6b46e0;
+            --gold: #caa76a;
+            --ink: #1a1d29;
+        }
+
+        body {
+            font-family: 'Kanit', 'Poppins', system-ui, Segoe UI, Roboto, Arial;
+            color: var(--ink);
+            background: #fff;
+            padding-top: 110px;
+        }
+
+        /* CSS: เมนูหน้าปัจจุบันให้เป็นสีทอง */
+        .navbar .nav-link.active-page,
+        .navbar .dropdown-item.active-page {
+            color: var(--gold) !important;
+            font-weight: 700;
+        }
+
+        /* ===== HERO ===== */
+        .hero-wrap {
+            margin-top: 10px;
+        }
+
+        .hero-job {
+            background: url('image/122.png') center/cover no-repeat;
+            min-height: 450px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, .18);
+            position: relative;
+        }
+
+        .hero-wrap {
+            width: 90% !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        .hero-job::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .45) 100%);
+        }
+
+        .hero-job-inner {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            z-index: 1;
+            padding: 24px;
+        }
+
+        .hero-job-inner h1 {
+            font-weight: 900;
+            font-size: clamp(38px, 5.6vw, 60px);
+            margin: 0;
+            text-shadow: 0 3px 18px rgba(0, 0, 0, .7);
+        }
+
+        .white-spacer {
+            background: #fff;
+            padding: 28px 0
+        }
+
+        /* ===== JOB SECTION (พื้นม่วง) ===== */
+        .job-section {
+            background: var(--brand);
+            color: #fff;
+            padding: 42px 0 60px;
+        }
+
+        /* --- ตกแต่งรายละเอียดตำแหน่งงาน (ซ้าย) ให้น่าอ่าน --- */
+        .job-item-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+            transition: all 0.3s ease;
+        }
+
+        .job-item-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(8px);
+        }
+
+        .job-item-card .job-left-title {
+            color: var(--gold);
+            font-size: 1.6rem;
+            font-weight: 800;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .job-block {
+            margin-bottom: 18px;
+        }
+
+        .job-item-card .job-block-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #f8f9fa;
+            margin-bottom: 8px;
+        }
+
+        .job-item-card .job-block-list {
+            padding-left: 18px;
+            margin: 0;
+            font-size: .85rem;
+            padding-right: 20px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+        }
+
+        .job-item-card .job-block-list li {
+            margin-bottom: 6px;
+        }
+
+        /* เส้นคั่นสีขาวแบบไล่สี */
+        .job-separator {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+            margin: 40px 0;
+        }
+
+        /* ===== ฝั่งขวาแบบฟอร์ม ===== */
+        .job-form-card {
+            background: #ffffff;
+            padding: 30px 32px;
+            border-radius: 4px;
+            box-shadow: 0 10px 26px rgba(0, 0, 0, .4);
+            width: 70%;
+            max-width: 550px;
+            margin-right: 0;
+        }
+
+        /* จัดฟอร์มให้เลื่อนตามเมื่ออ่าน (Sticky) สำหรับจอคอม */
+        @media (min-width: 992px) {
+            .sticky-form-container {
+                position: -webkit-sticky;
+                position: sticky;
+                top: 130px;
+            }
+        }
+
+        .job-form-card label {
+            font-size: .78rem;
+            font-weight: 600;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            color: #4b4b4b;
+            margin-bottom: 4px;
+        }
+
+        .job-form-card .form-control {
+            border-radius: 0;
+            border: 1px solid #d0d0d0;
+            font-size: .85rem;
+            padding: .55rem .7rem;
+            box-shadow: none;
+        }
+
+        .job-form-card .form-control:focus {
+            border-color: var(--brand-2);
+            box-shadow: 0 0 0 .15rem rgba(107, 70, 224, .18);
+        }
+
+        .job-form-card textarea.form-control {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .job-submit-btn {
+            display: block;
+            margin: 12px auto 0;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            font-size: .8rem;
+            font-weight: 700;
+            padding: .6rem 3rem;
+            background: var(--gold);
+            color: #fff;
+            border-radius: 40px;
+            transition: background 0.3s;
+        }
+
+        .job-submit-btn:hover {
+            background: #b18b44;
+            color: #fff;
+        }
+
+        .job-submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* ขยับเนื้อหาฝั่งซ้ายมาทางขวาให้มากขึ้นเฉพาะหน้าจอคอมพิวเตอร์ */
+        @media (min-width: 992px) {
+            .job-left-content {
+                padding-left: 100px;
+                padding-right: 40px;
+            }
+        }
+
+        @media (max-width:575.98px) {
+            .hero-job {
+                min-height: 340px;
+            }
+
+            .job-form-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="nav-placeholder"></div>
+
+    <section class="hero-wrap container-fluid px-0">
+        <div class="hero-job">
+            <div class="hero-job-inner">
+                <h1>Job Apply</h1>
+            </div>
+        </div>
+    </section>
+
+    <div class="white-spacer"></div>
+
+    <section class="job-section">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-5 mb-4 mb-lg-0 job-left-content">
+
+                    <div class="job-item-card">
+                        <div class="job-left-title">
+                            <i class="bi bi-person-workspace me-2 text-warning"></i>[Position]
+                        </div>
+
+                        <div class="job-block">
+                            <div class="job-block-title"><i class="bi bi-card-checklist me-2"></i>[Responsibility]</div>
+                            <ul class="job-block-list">
+                                <li>Responsibility 1</li>
+                                <li>Responsibility 2</li>
+                                <li>Responsibility 3</li>
+                            </ul>
+                        </div>
+
+                        <div class="job-block">
+                            <div class="job-block-title"><i class="bi bi-award me-2"></i>[Qualification]</div>
+                            <ul class="job-block-list">
+                                <li>Qualification 1</li>
+                                <li>Qualification 2</li>
+                                <li>Qualification 3</li>
+                            </ul>
+                        </div>
+
+                        <div class="job-block">
+                            <div class="job-block-title"><i class="bi bi-gift me-2"></i>[Benefit]</div>
+                            <ul class="job-block-list">
+                                <li>Benefit 1</li>
+                                <li>Benefit 2</li>
+                                <li>Benefit 3</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr class="job-separator">
+
+                    <div class="job-item-card">
+                        <div class="job-left-title">
+                            <i class="bi bi-person-workspace me-2 text-warning"></i>[Position]
+                        </div>
+
+                        <div class="job-block">
+                            <div class="job-block-title"><i class="bi bi-card-checklist me-2"></i>[Responsibility]</div>
+                            <ul class="job-block-list">
+                                <li>Responsibility 1</li>
+                                <li>Responsibility 2</li>
+                                <li>Responsibility 3</li>
+                            </ul>
+                        </div>
+
+                        <div class="job-block">
+                            <div class="job-block-title"><i class="bi bi-award me-2"></i>[Qualification]</div>
+                            <ul class="job-block-list">
+                                <li>Qualification 1</li>
+                                <li>Qualification 2</li>
+                                <li>Qualification 3</li>
+                            </ul>
+                        </div>
+
+                        <div class="job-block">
+                            <div class="job-block-title"><i class="bi bi-gift me-2"></i>[Benefit]</div>
+                            <ul class="job-block-list">
+                                <li>Benefit 1</li>
+                                <li>Benefit 2</li>
+                                <li>Benefit 3</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr class="job-separator">
+
+                    <div class="job-item-card">
+                        <div class="job-left-title">
+                            <i class="bi bi-person-workspace me-2 text-warning"></i>[Position]
+                        </div>
+
+                        <div class="job-block">
+                            <div class="job-block-title"><i class="bi bi-card-checklist me-2"></i>[Responsibility]</div>
+                            <ul class="job-block-list">
+                                <li>Responsibility 1</li>
+                                <li>Responsibility 2</li>
+                                <li>Responsibility 3</li>
+                            </ul>
+                        </div>
+
+                        <div class="job-block">
+                            <div class="job-block-title"><i class="bi bi-award me-2"></i>[Qualification]</div>
+                            <ul class="job-block-list">
+                                <li>Qualification 1</li>
+                                <li>Qualification 2</li>
+                                <li>Qualification 3</li>
+                            </ul>
+                        </div>
+
+                        <div class="job-block">
+                            <div class="job-block-title"><i class="bi bi-gift me-2"></i>[Benefit]</div>
+                            <ul class="job-block-list">
+                                <li>Benefit 1</li>
+                                <li>Benefit 2</li>
+                                <li>Benefit 3</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-7 d-flex justify-content-center align-self-start">
+                    <div class="sticky-form-container" style="width: 100%; display: flex; justify-content: center;">
+                        <form class="job-form-card" id="jobForm" action="https://api.web3forms.com/submit" method="POST"
+                            enctype="multipart/form-data">
+
+                            <input type="hidden" name="access_key" value="e1ade771-f666-4a2f-a70f-3e56ed1ad9db">
+                            <input type="hidden" name="subject" value="New Job Application from MTR Website">
+
+                            <div class="mb-3">
+                                <label for="name">NAME</label>
+                                <input type="text" class="form-control" id="name" name="name" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email">E-MAIL</label>
+                                <input type="email" class="form-control" id="email" name="email" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="phone">PHONE NUMBER</label>
+                                <input type="text" class="form-control" id="phone" name="phone" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="resume">RESUME (ATTACHED FILE)</label>
+                                <input type="file" class="form-control" id="resume" name="resume" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="position">POSITION</label>
+                                <input type="text" class="form-control" id="position" name="position" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="experience">EXPERIENCE</label>
+                                <textarea class="form-control" id="experience" name="experience"></textarea>
+                            </div>
+
+                            <button type="submit" class="job-submit-btn">SUBMIT</button>
+
+                            <div class="mt-3">
+                                <div id="formAlert" class="alert alert-success d-none"
+                                    style="font-size: 0.85rem; text-align: center;">Your application has been sent
+                                    successfully!</div>
+                                <div id="formAlertError" class="alert alert-danger d-none"
+                                    style="font-size: 0.85rem; text-align: center;">Oops! Something went wrong. Please
+                                    try again.</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-main">
+        <div class="container footer-top">
+            <div class="row align-items-center">
+                <div class="col-md-3 mb-3 mb-md-0 footer-logo text-md-start text-center">
+                    <img src="image/1mtr.png" alt="MTR Asset Manager Logo">
+                    <div class="footer-tagline">“Our service starts from the very first day of your investment journey
+                        .”</div>
+                </div>
+
+                <div class="col-md-5 mb-3 mb-md-0">
+                    <div class="footer-center-text text-md-center text-center">
+                        <div class="company-name">M.T.R. ASSET MANAGERS CO., LTD.</div>
+                        <div>99/1, BJC 2 Tower, 11 Floor,</div>
+                        <div>Soi Saengchan - Rubia, Sukhumvit 42 Road, Phrakanong,</div>
+                        <div>Klongtoey, Bangkok 10110</div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="footer-contact-box">
+                        <div class="footer-contact-title">CONTACT US</div>
+
+                        <div class="contact-row">
+                            <div class="contact-label-cell">
+                                <i class="bi bi-envelope"></i>
+                                <span>E-mail</span>
+                            </div>
+                            <div class="contact-value-cell">
+                                info@mtr.co.th.
+                            </div>
+                        </div>
+
+                        <div class="contact-row">
+                            <div class="contact-label-cell">
+                                <i class="bi bi-globe"></i>
+                                <span>Website</span>
+                            </div>
+                            <div class="contact-value-cell">
+                                www.mtr.co.th
+                            </div>
+                        </div>
+
+                        <div class="contact-row">
+                            <div class="contact-label-cell">
+                                <i class="bi bi-telephone"></i>
+                                <span>Phone</span>
+                            </div>
+                            <div class="contact-value-cell">
+                                02-381-8188 / Mobile : 083 - 032 - 8557
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2002 MTR Asset Manager Co., Ltd. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Load Navbar
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('nav-placeholder').innerHTML = data;
+                    initNavbarScripts();
+                })
+                .catch(error => console.error('Navbar Error:', error));
+
+            // 2. Web3Forms Logic แบบ AJAX ไม่เด้งเปลี่ยนหน้า
+            const jobForm = document.getElementById('jobForm');
+            if (jobForm) {
+                jobForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // ปรับสถานะปุ่มตอนกำลังส่ง
+                    const submitBtn = jobForm.querySelector('button[type="submit"]');
+                    const originalBtnText = submitBtn.textContent;
+                    submitBtn.textContent = 'SENDING...';
+                    submitBtn.disabled = true;
+
+                    const alertSuccess = document.getElementById('formAlert');
+                    const alertError = document.getElementById('formAlertError');
+
+                    // ซ่อน Alert ก่อนเริ่มส่งรอบใหม่
+                    alertSuccess.classList.add('d-none');
+                    alertError.classList.add('d-none');
+
+                    // เก็บข้อมูลทั้งหมด (รวมไฟล์อัปโหลด)
+                    const formData = new FormData(jobForm);
+
+                    // ส่งไปที่ API ของ Web3Forms
+                    fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        body: formData
+                    })
+                        .then(async (response) => {
+                            let json = await response.json();
+                            if (response.status == 200) {
+                                // ส่งสำเร็จ
+                                alertSuccess.classList.remove('d-none');
+                                jobForm.reset();
+                            } else {
+                                // ติดปัญหาฝั่งเซิร์ฟเวอร์
+                                console.log(response);
+                                alertError.classList.remove('d-none');
+                            }
+                        })
+                        .catch(error => {
+                            // ติดปัญหาเครือข่าย/การเชื่อมต่อ
+                            console.error('Error:', error);
+                            alertError.classList.remove('d-none');
+                        })
+                        .finally(() => {
+                            // คืนค่าปุ่มให้กดใหม่ได้
+                            submitBtn.textContent = originalBtnText;
+                            submitBtn.disabled = false;
+                        });
+                });
+            }
+        });
+
+        function initNavbarScripts() {
+            // โค้ดสำหรับ Navbar (ถ้ามี)
+        }
+    </script>
+</body>
+
+</html>

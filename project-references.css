@@ -31,7 +31,7 @@ body {
 .hero {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 650px;
     border-radius: 24px;
     overflow: hidden;
 }
@@ -204,23 +204,29 @@ body {
     display: block;
 }
 
+/* --- จุดที่ปรับให้โลโก้ใหญ่ขึ้น --- */
 .ref-card-logo {
     background: #ffffff;
     text-align: center;
     border-bottom: 1px solid rgba(0, 0, 0, .06);
-    height: 70px !important;
+    height: 100px !important;
+    /* ปรับจาก 70px เป็น 100px */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
 }
 
 .ref-card-logo img {
-    max-height: 50px !important;
-    max-width: 80% !important;
+    max-height: 80px !important;
+    /* ปรับจาก 50px เป็น 80px */
+    max-width: 95% !important;
+    /* ปรับจาก 80% เป็น 95% */
     object-fit: contain !important;
     display: block;
     margin: 0 auto;
 }
+
+/* ---------------------------------- */
 
 .ref-card-footer {
     background: #b7965a;
